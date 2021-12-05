@@ -4,3 +4,10 @@
     box-sizing: border-box;
     font-family: 'poppins',sans-serif;
 }
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),transparent),url(/portfolio-temp/images/background.png);
+    background-size:cover;
+    
+}
