@@ -1,0 +1,88 @@
+
+h1, h2{
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+.left-col, .right-col{
+    flex-basis: 50%;
+    height: 100vh;
+    position: relative;
+}
+.logo{
+    display: block;
+    width: 80px;
+    margin-top:30px;
+    margin-left: 120px;
+}
+.content {
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 120px;
+    transform: translateY(-50%);
+}
+.content h1 {
+    color: darkgreen ;
+    font-size: 60 px;
+    line: height 70px;
+    margin: 25px 0;
+}
+.content p{
+    color: black;
+    font-size:17px;
+    line-height: 28px;
+    margin-bottom: 50px;
+}
+button{
+    width: 100%;
+    border: none;
+    background: rgb(11, 160, 60);
+    box-shadow: 0px 10px 10px 1px rgba(219, 219, 219, 0.5);
+    padding: 25px 0;
+    color: white;
+    outline: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+.slider{
+    width: 100%;
+    height: 60%;
+    display: flex;
+}
+.slider img{
+    width: 100%;
+}
+.slider-content{
+    width: 100%;
+    height: 40%;
+    background: #05a35f;
+    padding-top: 30px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.slider-content h2{
+    font-size: 26px;
+    font-weight: 100;
+    color: #fff;
+}
+.slider-content p{
+    color: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom:20px ;
+}
+hr{
+    border:none;
+    width: 270px;
+    height: 1px;
+    background:#b5e3cf;
+    margin: 20px 0 30px;
+}
