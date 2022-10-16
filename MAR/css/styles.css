@@ -1,0 +1,126 @@
+:root{
+    --body-font: 'Lato', sans-serif;
+    --heading-font: 'Nunito Sans', sans-serif;
+    --lightblue: #39bae6;
+    --darkblue: #223055;
+
+}
+
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+    margin: 0;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+body{
+    font-family: var(--body-font);
+}
+p{
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5{
+    font-family: var(--heading-font);
+}
+.btn{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    gap: .4em;
+    padding: .2em .6em;
+    border-radius: .2em;
+    text-decoration: none;
+}
+
+/*-----header-----*/
+header{
+    background-image: url(../images/header1_sm.jpg);
+    background-size: cover;
+    background-position: center right;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    text-align: center;
+    color: white;
+}
+.masthead-icon{
+    width: 10em;
+}
+.mast-btn{
+    background-color: white;
+    color: var(--lightblue);
+}
+
+/*----menu-----*/
+.menu{
+    background-color: var(--darkblue);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+    padding: .1em;
+    max-height: 2.5em;
+    box-shadow: .1em .1em 1em var(--darkblue);
+    border-bottom: .01em solid white;
+}
+.menu .logo{
+    position: absolute;
+    width: 5rem;
+}
+
+nav{
+    position: relative;
+    top:10.2em;
+    right: .1em;
+    transform: translateX(-100%);
+    transition: all .3s ease-in;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    background-color: var(--lightblue);
+    padding:1em;
+    width: 100vw;
+    border-bottom: .1em solid white;
+}
+#nav-toggle{
+    position: absolute;
+    right: 1em;
+}
+#nav-toggle:checked ~ nav{
+    transform: translateX(0);
+}
+
+/*-----main-content----*/
+.main-content{
+    padding: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+main h2{
+    font-size: 2.5rem;
+    color: var(--lightblue);
+    flex: 0 1 5em;
+}
+main p{
+    font-size: 100%;
+    border-left: .01em solid rgb(209, 209, 209);
+    padding: 1em;
+    flex: 0 1 35em;
+}
