@@ -207,21 +207,30 @@ main p{
 .section-cards{
 }
 ul.cards{
-    max-width: 80em;
+    max-width: 75em;
+    margin: 0 auto;
     list-style: none;
     padding: 0;
     display: grid;
     padding: 1em;
     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-    gap: 1em;
+    gap: 1.5em;
 }
-
 
 .cards li{
-    border-radius: .5em;
-    box-shadow: 0 0 .1em black;
-    padding: 1em 1.5em;
+    padding: 0;
+    margin: 0;
 }
+.card{
+    border-radius: .5em;
+    box-shadow: 0 0 .4em rgb(139, 139, 139);
+    padding: 1.5em;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: .5em;
+}
+
 .title-card{
     display: grid;
     grid-template-rows: 1fr .5fr;
@@ -245,11 +254,6 @@ ul.cards{
     text-shadow: .05em .05em .1em rgb(88, 88, 88);
     white-space: nowrap ;
 }
-.card article{
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 1em;
-}
 .card p{
     font-size: 100%;
 }
@@ -258,4 +262,64 @@ ul.cards{
     justify-content: center;
     color: white;
     font-size: 1.1rem;
+}
+.card .btn:hover{
+    background-color: rgb(82, 82, 82);
+}
+
+
+/*----exp-articles----*/
+.exp-article{
+    margin-top: 2em;
+    background: url(../images/ctaBG1_sm.jpg) no-repeat;
+    background-size:cover;
+    background-position: center;
+    color: white;
+    padding: 4%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-shadow: .03em .03em .1em black;
+}
+.exp-article h4{
+    font-size: 2rem;
+    flex: 0 1 5em;
+    padding-right: .5em;
+}
+.exp-article p{
+    font-size: 100%;
+    padding-left: .5em;
+    border-left: .01em solid white;
+    flex: 0 1 72%;
+}
+
+/*----Get to Know Us----*/
+section.know-us{
+    padding: 1em;
+}
+.know-us h4{
+    font-size: 2.6rem;
+    text-align: center;
+    color: var(--lightblue);
+}
+ul.image-list{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 1em 0;
+}
+.image-list img{
+    border-radius: 5em;
+    border: .1em solid white;
+    filter: drop-shadow(.1em .1em .5em rgb(144, 217, 219));
+}
+.image-list li:nth-child(1){
+    z-index: 1;
+    width: 30em;
+}
+.image-list li:nth-child(2){
+    z-index: -1;
+
 }
