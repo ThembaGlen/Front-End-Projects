@@ -30,6 +30,10 @@ p{
 h1, h2, h3, h4, h5{
     font-family: var(--heading-font);
 }
+a{
+    color: var(--lightblue);
+    font-size: 1.2rem;
+}
 .btn{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -52,27 +56,26 @@ header{
     background-image: url(../images/header1_sm.jpg);
     background-size: cover;
     background-position: center right;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;  
     gap: 1em;
-    padding: 1em;
-    text-align: center;
+    padding: 2em;
     color: white;
 }
 .masthead-icon{
-    width: 10em;
+    flex: 0 1 10em;
+}
+.masthead-intro{
+    flex: 0 1 45em;
+    text-align: center;
 }
 .mast-btn{
+    width: fit-content;
     background-color: white;
     color: var(--lightblue);
+    margin: 1em auto;
 }
 
 /*----menu-----*/
@@ -297,29 +300,62 @@ ul.cards{
 /*----Get to Know Us----*/
 section.know-us{
     padding: 1em;
+    max-width: 73em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "header header header"
+    "list list list"
+    "art art art";
 }
 .know-us h4{
     font-size: 2.6rem;
     text-align: center;
     color: var(--lightblue);
+    grid-area: header;
 }
 ul.image-list{
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: repeat(5,.1fr 1fr .1fr);
+    align-items: center;
     padding: 1em 0;
+    grid-area: list;
 }
+.know-us article{
+    grid-area: art;
+}
+.know-us article p{
+    font-size: 100%;
+}
+
 .image-list img{
-    border-radius: 5em;
+    border-radius: 100%;
     border: .1em solid white;
     filter: drop-shadow(.1em .1em .5em rgb(144, 217, 219));
 }
 .image-list li:nth-child(1){
+    grid-column: 1 / 5;
+    grid-row: 1;
     z-index: 1;
-    width: 30em;
 }
 .image-list li:nth-child(2){
+    grid-column: 4 / 7;
+    grid-row: 1;
+}
+.image-list li:nth-child(3){
+    grid-column: 6 / 11;
+    grid-row: 1;
+}
+.image-list li:nth-child(4){
+    grid-column: 10 / 13;
+    grid-row: 1;
     z-index: -1;
-
+}
+.image-list li:nth-child(5){
+    grid-column: 12 / 16;
+    grid-row: 1;
 }
