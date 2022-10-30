@@ -104,6 +104,8 @@ header{
     background-color: var(--darkblue);
     position: -webkit-sticky;
     position: sticky;
+    width: 100vw;
+    z-index: 100;
     top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -112,13 +114,13 @@ header{
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
-    -webkit-box-pack:justify;
-        -ms-flex-pack:justify;
-            justify-content:space-between;
+            -webkit-box-pack:justify;
+            -ms-flex-pack:justify;
+                justify-content:space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: .1em;
+    padding: 1.5em;
     max-height: 2.5em;
     -webkit-box-shadow: .1em .1em 1em var(--darkblue);
             box-shadow: .1em .1em 1em var(--darkblue);
@@ -128,15 +130,13 @@ header{
     position: absolute;
     width: 5rem;
 }
-
 nav{
-    position: relative;
-    top:11.9em;
-    overflow: hidden;
-    right: .07em;
-    -webkit-transform: translateX(-100%);
-        -ms-transform: translateX(-100%);
-            transform: translateX(-100%);
+    position: absolute;
+    top: 2.8em;
+    left: 0;
+    -webkit-transform: translateX(-120%);
+        -ms-transform: translateX(-120%);
+            transform: translateX(-120%);
     -webkit-transition: all .3s ease-in;
     -o-transition: all .3s ease-in;
     transition: all .3s ease-in;
@@ -152,6 +152,11 @@ nav ul{
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
     padding: 0;
+    margin: 0;
+}
+nav li{
+    padding: 0;
+    margin: 0;
 }
 nav li > a{
     text-decoration: none;
@@ -165,6 +170,7 @@ nav li > a{
 .btn-container{
     background-color: var(--lightblue);
     padding: 1em;
+    height: 100vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -174,7 +180,8 @@ nav li > a{
 }
 .book-btn{
     font-size: 1.1rem;
-    width: 9em;
+    width: fit-content;
+    height: fit-content;
     color:  var(--darkblue);
     background-color: white;
     border-radius: .5em;
@@ -304,7 +311,7 @@ ul.cards{
     background-size:cover;
     background-position: center;
     color: white;
-    padding: 4%;
+    padding: 2em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -321,7 +328,7 @@ ul.cards{
     text-shadow: .03em .03em .1em black;
 }
 .exp-article h4, .education h4{
-    font-size: 2rem;
+    font-size: 2.5rem;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 5em;
             flex: 0 1 5em;
@@ -329,13 +336,77 @@ ul.cards{
 }
 .exp-article p, .education p{
     font-size: 100%;
-    padding-left: .5em;
+    padding-left: 1em;
     border-left: .01em solid white;
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 72%;
-            flex: 0 1 72%;
+        -ms-flex: 0 1 30rem;
+            flex: 0 1 30rem;
 }
-
+@media only screen and (min-width:44em){
+    header.masthead{
+        background: url(../images/header1_lg.jpg);
+        background-size: cover;
+        background-position: center right;
+    }
+    .masthead-intro{
+        text-align: left;
+    }
+    .menu{
+        width: 100%;
+    }
+    nav{
+        transform: translateX(0);
+        position: static;
+        font-size: 1rem;
+    }
+    nav ul{
+        flex-flow: row nowrap;
+        justify-content: end;
+        align-items: center;
+    }
+    #nav-toggle{
+        display: none;
+    }
+    nav li > a {
+        color: white;
+        font-size: inherit;
+        padding: 1em;
+        width: fit-content;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+    }
+    nav li > a:hover{
+        color: var(--lightblue);
+    }
+    .btn-container{
+        height: inherit;
+        width: inherit;
+        font-size: inherit;
+        padding: 0;
+        background-color: #22305500;
+    }
+    .book-btn{
+        width: fit-content;
+        white-space: nowrap;
+        font-size: inherit;
+        background-color: var(--lightblue);
+        border: none;
+        border-radius: .3em;
+        color: white;
+        padding: .5em;
+        cursor: pointer;
+    }
+    .exp-article{
+        background: url(../images/ctaBG1_lg.jpg) no-repeat;
+        background-size:cover;
+        background-position: center;
+    }
+    .exp-article p, .education p{
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 67%;
+                flex: 0 1 67%;
+    }
+}
 /*----Get to Know Us----*/
 section.know-us{
     padding: 1em;
@@ -415,7 +486,8 @@ ul.image-list{
 }
 /*----infographc---*/
 .infographc{
-    padding: 1em;
+    max-width: 73em;
+    margin: 0 auto;
 }
 .infographc p{
     font-size: 100%;
@@ -426,9 +498,7 @@ ul.image-list{
     font-size: 2.2rem;
     color: var(--lightblue);
 }
-.infographc h5{
 
-}
 .facts{
     margin: 1em 0;
 }
@@ -443,4 +513,6 @@ ul.image-list{
     max-width: 35em;
     margin: 0 auto;
 }
+
+/*---media queries---*/
 
